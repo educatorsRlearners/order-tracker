@@ -1,0 +1,116 @@
+{
+  "status": "success",
+  "data": {
+    "resultType": "matrix",
+    "result": [
+      {
+        "metric": {
+          "http_response_status_code": "200",
+          "http_route": "/healthz"
+        },
+        "values": [
+          [
+            1790878461.842,
+            "7.732029193188255"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "http_response_status_code": "500",
+          "http_route": "/"
+        },
+        "values": [
+          [
+            1790878461.842,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "http_response_status_code": "500",
+          "http_route": "/api/orders"
+        },
+        "values": [
+          [
+            1790878461.842,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "http_response_status_code": "500",
+          "http_route": "/api/orders/{order_id}"
+        },
+        "values": [
+          [
+            1790878461.842,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "http_response_status_code": "500",
+          "http_route": "/docs"
+        },
+        "values": [
+          [
+            1790878461.842,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "http_response_status_code": "500",
+          "http_route": "/docs/oauth2-redirect"
+        },
+        "values": [
+          [
+            1790878461.842,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "http_response_status_code": "500",
+          "http_route": "/healthz"
+        },
+        "values": [
+          [
+            1790878461.842,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "http_response_status_code": "500",
+          "http_route": "/openapi.json"
+        },
+        "values": [
+          [
+            1790878461.842,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "http_response_status_code": "500",
+          "http_route": "/redoc"
+        },
+        "values": [
+          [
+            1790878461.842,
+            "0"
+          ]
+        ]
+      }
+    ]
+  }
+}

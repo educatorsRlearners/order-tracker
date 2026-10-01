@@ -1,0 +1,20 @@
+{
+  "incident_id": "20261001T181421Z-unknown",
+  "alertname": "ResponderTest",
+  "severity": null,
+  "affected_endpoint": null,
+  "summary": "Test notification; no incident to fix",
+  "description": null,
+  "fired_at": null,
+  "window": {
+    "start": "2026-10-01T17:59:21.842055+00:00",
+    "end": "2026-10-01T18:15:21.842055+00:00"
+  },
+  "files": [
+    "alert.json",
+    "logs.json",
+    "request_rates.json"
+  ],
+  "errors": {},
+  "trace_ids": []
+}
