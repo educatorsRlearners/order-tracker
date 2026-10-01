@@ -4,3 +4,5 @@ __pycache__/
 *.pyc
 data/
 .env
+.vscodeincident-response/incidents/
+incident-response/.venv/

@@ -34,3 +34,16 @@ Run tests with `uv run --frozen pytest -q`. Stop the app with `docker compose do
 | PATCH | `/api/orders/{id}` | Change an order status |
 
 The app uses SQLite to keep setup small. Run one app container at a time. The course exercise is about detecting and handling an incident, not scaling the database.
+
+## Incident response agent
+
+`incident-response/` receives Grafana alerts on `POST /alerts` (port 8001), saves the evidence an on-call engineer would look at, and starts Claude Code headless (`claude -p`) to investigate, fix, or escalate.
+
+It runs on the host (it needs the local `claude` CLI); Grafana reaches it through the provisioned `incident-response` webhook contact point at `host.docker.internal:8001`.
+
+```bash
+docker compose up --build -d --wait
+cd incident-response && uv run uvicorn app.main:app --port 8001
+```
+
+Per alert it writes `incident-response/incidents/<start>-<fingerprint>/` with `alert.json`, `manifest.json`, `logs.json` (Loki), `traces/*.json` (Tempo error traces), `request_rates.json` (Prometheus), then the agent's `agent.jsonl` transcript and `report.md` (RESOLVED or ESCALATED). Resent alerts are ignored. Set `INCIDENT_AGENT=off` to collect evidence without starting the agent. The agent may edit code and run tests, but is told not to commit or touch containers.
