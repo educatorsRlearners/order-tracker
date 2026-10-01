@@ -1,4 +1,3 @@
-import logging
 import os
 import sqlite3
 from contextlib import asynccontextmanager
@@ -8,15 +7,10 @@ from uuid import uuid4
 
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
-from opentelemetry import trace
 from pydantic import BaseModel, Field
-
-from app.telemetry import seed_error_series, setup_telemetry
 
 
 DB_PATH = Path(os.getenv("ORDER_DB_PATH", "data/orders.db"))
-logger = logging.getLogger("app.orders")
-tracer = trace.get_tracer("order-tracker")
 STATUSES = {"received", "preparing", "shipped", "delivered"}
 
 
@@ -77,14 +71,12 @@ class StatusUpdate(BaseModel):
 
 
 @asynccontextmanager
-async def lifespan(app: FastAPI):
+async def lifespan(_app: FastAPI):
     init_db()
-    seed_error_series(app)
     yield
 
 
 app = FastAPI(title="Order Tracker", lifespan=lifespan)
-setup_telemetry(app)
 
 
 @app.get("/")
@@ -108,16 +100,11 @@ def list_orders():
 
 @app.get("/api/orders/{order_id}")
 def get_order(order_id: str):
-    with tracer.start_as_current_span("order.lookup") as span:
-        span.set_attribute("order.id", order_id)
-        with connect() as db:
-            row = db.execute("SELECT * FROM orders WHERE id = ?", (order_id,)).fetchone()
-        span.set_attribute("order.found", row is not None)
-        if row is None:
-            logger.warning("Order lookup missed: order_id=%s", order_id)
-            raise HTTPException(404, "Order not found")
-        logger.info("Order lookup hit: order_id=%s priority=%s", order_id, row["priority"])
-        return order_detail(row)
+    with connect() as db:
+        row = db.execute("SELECT * FROM orders WHERE id = ?", (order_id,)).fetchone()
+    if row is None:
+        raise HTTPException(404, "Order not found")
+    return order_detail(row)
 
 
 @app.post("/api/orders", status_code=201)
