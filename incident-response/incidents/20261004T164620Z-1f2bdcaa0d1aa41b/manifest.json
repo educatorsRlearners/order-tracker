@@ -1,0 +1,25 @@
+{
+  "incident_id": "20261004T164620Z-1f2bdcaa0d1aa41b",
+  "alertname": "Order Tracker 5xx responses",
+  "severity": "critical",
+  "affected_endpoint": "/api/orders/{order_id}",
+  "summary": "5xx responses on /api/orders/{order_id}",
+  "description": "/api/orders/{order_id} returned 2 5xx response(s) in the last 5 minutes. Dashboard: http://localhost:3000/d/order-tracker-requests/order-tracker-requests-and-errors?from=now-30m&to=now",
+  "fired_at": "2026-10-04T16:46:20Z",
+  "window": {
+    "start": "2026-10-04T16:31:20+00:00",
+    "end": "2026-10-04T16:47:20.067528+00:00"
+  },
+  "files": [
+    "alert.json",
+    "logs.json",
+    "request_rates.json",
+    "traces/740b2f21713eccc1acbaaaa2950b1373.json",
+    "traces/3cad6e1100a4fd5876f0e25c0752b15b.json"
+  ],
+  "errors": {},
+  "trace_ids": [
+    "740b2f21713eccc1acbaaaa2950b1373",
+    "3cad6e1100a4fd5876f0e25c0752b15b"
+  ]
+}

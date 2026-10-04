@@ -31,5 +31,24 @@ def test_create_and_update_order(client):
     assert updated.json()["status"] == "shipped"
 
 
+@pytest.mark.parametrize(
+    "created_at, expected",
+    [
+        ("2026-09-30T12:00:00+00:00", "2026-10-02"),
+        ("2026-12-31T12:00:00+00:00", "2027-01-02"),
+        ("2026-10-04T12:00:00+00:00", "2026-10-06"),
+    ],
+)
+def test_express_estimate_crosses_month_end(client, created_at, expected):
+    with main.connect() as db:
+        db.execute(
+            "INSERT INTO orders VALUES (?, ?, ?, ?, ?, ?)",
+            ("express-test", "Pat", "Lamp", "express", "received", created_at),
+        )
+    response = client.get("/api/orders/express-test")
+    assert response.status_code == 200
+    assert response.json()["estimated_delivery"] == expected
+
+
 def test_missing_order(client):
     assert client.get("/api/orders/missing").status_code == 404

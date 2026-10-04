@@ -1,0 +1,23 @@
+{
+  "incident_id": "20261004T164254Z-unknown",
+  "alertname": "ResponderTest",
+  "severity": null,
+  "affected_endpoint": null,
+  "summary": "Test notification; no incident to fix",
+  "description": null,
+  "fired_at": null,
+  "window": {
+    "start": "2026-10-04T16:27:54.982670+00:00",
+    "end": "2026-10-04T16:43:54.982670+00:00"
+  },
+  "files": [
+    "alert.json",
+    "logs.json",
+    "request_rates.json",
+    "traces/d5990f5de42d2da16c09ea03bc2e3472.json"
+  ],
+  "errors": {},
+  "trace_ids": [
+    "d5990f5de42d2da16c09ea03bc2e3472"
+  ]
+}

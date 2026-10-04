@@ -1,0 +1,303 @@
+{
+  "batches": [
+    {
+      "resource": {
+        "attributes": [
+          {
+            "key": "telemetry.sdk.language",
+            "value": {
+              "stringValue": "python"
+            }
+          },
+          {
+            "key": "telemetry.sdk.name",
+            "value": {
+              "stringValue": "opentelemetry"
+            }
+          },
+          {
+            "key": "telemetry.sdk.version",
+            "value": {
+              "stringValue": "1.45.0"
+            }
+          },
+          {
+            "key": "service.instance.id",
+            "value": {
+              "stringValue": "3d6f7f8d-782b-4468-aaaf-6121dc0affc9"
+            }
+          },
+          {
+            "key": "service.name",
+            "value": {
+              "stringValue": "order-tracker"
+            }
+          }
+        ]
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "opentelemetry.instrumentation.fastapi",
+            "version": "0.66b0"
+          },
+          "spans": [
+            {
+              "traceId": "1ZkPXeQtLaFsCeoDvC40cg==",
+              "spanId": "W3ET271tjII=",
+              "parentSpanId": "5B1dj5kwLU8=",
+              "name": "GET /api/orders/{order_id} http send",
+              "kind": "SPAN_KIND_INTERNAL",
+              "startTimeUnixNano": "1791131947515588334",
+              "endTimeUnixNano": "1791131947515638043",
+              "attributes": [
+                {
+                  "key": "asgi.event.type",
+                  "value": {
+                    "stringValue": "http.response.start"
+                  }
+                },
+                {
+                  "key": "http.status_code",
+                  "value": {
+                    "intValue": "404"
+                  }
+                }
+              ],
+              "status": {}
+            },
+            {
+              "traceId": "1ZkPXeQtLaFsCeoDvC40cg==",
+              "spanId": "ytuHXyQkWlg=",
+              "parentSpanId": "5B1dj5kwLU8=",
+              "name": "GET /api/orders/{order_id} http send",
+              "kind": "SPAN_KIND_INTERNAL",
+              "startTimeUnixNano": "1791131947516274501",
+              "endTimeUnixNano": "1791131947516281543",
+              "attributes": [
+                {
+                  "key": "asgi.event.type",
+                  "value": {
+                    "stringValue": "http.response.body"
+                  }
+                }
+              ],
+              "status": {}
+            },
+            {
+              "traceId": "1ZkPXeQtLaFsCeoDvC40cg==",
+              "spanId": "YLq53EMMAZY=",
+              "parentSpanId": "5B1dj5kwLU8=",
+              "name": "GET /api/orders/{order_id} http send",
+              "kind": "SPAN_KIND_INTERNAL",
+              "startTimeUnixNano": "1791131947516330751",
+              "endTimeUnixNano": "1791131947516336959",
+              "attributes": [
+                {
+                  "key": "asgi.event.type",
+                  "value": {
+                    "stringValue": "http.response.body"
+                  }
+                }
+              ],
+              "status": {}
+            },
+            {
+              "traceId": "1ZkPXeQtLaFsCeoDvC40cg==",
+              "spanId": "5B1dj5kwLU8=",
+              "name": "GET /api/orders/{order_id}",
+              "kind": "SPAN_KIND_SERVER",
+              "startTimeUnixNano": "1791131947506483334",
+              "endTimeUnixNano": "1791131947516408168",
+              "attributes": [
+                {
+                  "key": "http.scheme",
+                  "value": {
+                    "stringValue": "http"
+                  }
+                },
+                {
+                  "key": "http.host",
+                  "value": {
+                    "stringValue": "10.215.24.7:8000"
+                  }
+                },
+                {
+                  "key": "net.host.port",
+                  "value": {
+                    "intValue": "8000"
+                  }
+                },
+                {
+                  "key": "http.flavor",
+                  "value": {
+                    "stringValue": "1.1"
+                  }
+                },
+                {
+                  "key": "http.target",
+                  "value": {
+                    "stringValue": "/api/orders/nope"
+                  }
+                },
+                {
+                  "key": "http.server_name",
+                  "value": {
+                    "stringValue": "localhost:8000"
+                  }
+                },
+                {
+                  "key": "http.user_agent",
+                  "value": {
+                    "stringValue": "curl/8.7.1"
+                  }
+                },
+                {
+                  "key": "net.peer.ip",
+                  "value": {
+                    "stringValue": "10.215.24.1"
+                  }
+                },
+                {
+                  "key": "net.peer.port",
+                  "value": {
+                    "intValue": "59174"
+                  }
+                },
+                {
+                  "key": "http.route",
+                  "value": {
+                    "stringValue": "/api/orders/{order_id}"
+                  }
+                },
+                {
+                  "key": "http.method",
+                  "value": {
+                    "stringValue": "GET"
+                  }
+                },
+                {
+                  "key": "http.url",
+                  "value": {
+                    "stringValue": "http://localhost:8000/api/orders/nope"
+                  }
+                },
+                {
+                  "key": "http.status_code",
+                  "value": {
+                    "intValue": "404"
+                  }
+                }
+              ],
+              "status": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "resource": {
+        "attributes": [
+          {
+            "key": "telemetry.sdk.language",
+            "value": {
+              "stringValue": "python"
+            }
+          },
+          {
+            "key": "telemetry.sdk.name",
+            "value": {
+              "stringValue": "opentelemetry"
+            }
+          },
+          {
+            "key": "telemetry.sdk.version",
+            "value": {
+              "stringValue": "1.45.0"
+            }
+          },
+          {
+            "key": "service.instance.id",
+            "value": {
+              "stringValue": "3d6f7f8d-782b-4468-aaaf-6121dc0affc9"
+            }
+          },
+          {
+            "key": "service.name",
+            "value": {
+              "stringValue": "order-tracker"
+            }
+          }
+        ]
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "order-tracker"
+          },
+          "spans": [
+            {
+              "traceId": "1ZkPXeQtLaFsCeoDvC40cg==",
+              "spanId": "08Hi5hk6Fyk=",
+              "parentSpanId": "5B1dj5kwLU8=",
+              "name": "order.lookup",
+              "kind": "SPAN_KIND_INTERNAL",
+              "startTimeUnixNano": "1791131947511419793",
+              "endTimeUnixNano": "1791131947514972751",
+              "attributes": [
+                {
+                  "key": "order.id",
+                  "value": {
+                    "stringValue": "nope"
+                  }
+                },
+                {
+                  "key": "order.found",
+                  "value": {
+                    "boolValue": false
+                  }
+                }
+              ],
+              "events": [
+                {
+                  "timeUnixNano": "1791131947514935584",
+                  "name": "exception",
+                  "attributes": [
+                    {
+                      "key": "exception.type",
+                      "value": {
+                        "stringValue": "fastapi.exceptions.HTTPException"
+                      }
+                    },
+                    {
+                      "key": "exception.message",
+                      "value": {
+                        "stringValue": "404: Order not found"
+                      }
+                    },
+                    {
+                      "key": "exception.stacktrace",
+                      "value": {
+                        "stringValue": "Traceback (most recent call last):\n  File \"/app/.venv/lib/python3.12/site-packages/opentelemetry/trace/__init__.py\", line 602, in use_span\n    yield span\n  File \"/app/.venv/lib/python3.12/site-packages/opentelemetry/sdk/trace/__init__.py\", line 1136, in start_as_current_span\n    yield span\n  File \"/app/.venv/lib/python3.12/site-packages/opentelemetry/trace/__init__.py\", line 441, in start_as_current_span\n    yield span\n  File \"/app/app/main.py\", line 118, in get_order\n    raise HTTPException(404, \"Order not found\")\nfastapi.exceptions.HTTPException: 404: Order not found\n"
+                      }
+                    },
+                    {
+                      "key": "exception.escaped",
+                      "value": {
+                        "stringValue": "False"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "status": {
+                "message": "HTTPException: 404: Order not found",
+                "code": "STATUS_CODE_ERROR"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
